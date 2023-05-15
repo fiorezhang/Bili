@@ -24,7 +24,7 @@ from io import BytesIO
 import gzip
 import math
 
-COOKIE = "buvid3=58B237F0-1CF4-D8C2-8B04-B16361B3669252076infoc; b_nut=1666184152; i-wanna-go-back=-1; b_ut=7; _uuid=35CBC1DD-2826-2D1E-CF3F-9484110AB81FE52620infoc; buvid_fp=bccff3f50075981a4479bce7dd4dfe3e; buvid4=5AF04D50-A63E-4DCC-F4B9-D12EA9CC0F4953773-022101920-NByMlaqIUVcBILfZJ+Kk3g%3D%3D; CURRENT_FNVAL=4048; rpdid=|(J|J|kl~~Y|0J'uYYYu)RuY~; PVID=5; is-2022-channel=1; nostalgia_conf=-1; b_lsid=366D3CA7_183F8036564; theme_style=light; sid=6vc4x059; innersign=1"
+COOKIE = "buvid3=AE836BCD-4F59-4707-9E19-5003C2AF5D1A138370infoc; LIVE_BUVID=AUTO2416265656015773; i-wanna-go-back=-1; buvid4=6F9C7690-0AE8-314A-8F32-10A64AF1AFB077256-022012621-SZe2GP0VcE98+cyaxW38PQ==; CURRENT_BLACKGAP=0; nostalgia_conf=-1; is-2022-channel=1; buvid_fp_plain=undefined; blackside_state=0; _uuid=D485BECB-59EF-45BE-FB69-688B35AECEFB92245infoc; b_nut=100; CURRENT_FNVAL=4048; rpdid=|(u~|mkJ~lRu0J'uYY)mkRuku; fingerprint=c9f0ecd9ed63ec31e3a443100e738de4; DedeUserID=29214331; DedeUserID__ckMd5=3cc94f45859820e9; buvid_fp=c9f0ecd9ed63ec31e3a443100e738de4; b_ut=5; PVID=1; bp_video_offset_29214331=753242005869428700; CURRENT_QUALITY=80; SESSDATA=a0a177f5,1691506551,1c1dc*21; bili_jct=243742dd0405c98c4458bba332f61260; b_lsid=655CBF23_18639378E93; theme_style=light; sid=5r5q6clx; innersign=1"
 USERAGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:105.0) Gecko/20100101 Firefox/105.0"
 REFERER = "https://www.bilibili.com/"
 RETRY = 3
@@ -355,7 +355,7 @@ if __name__ == '__main__':
         print("Get replies from: " + title + " AID(OID): " + AID)
 
         #生成表头
-        file = "VIDEO_"+str(BVID)+"_"+validateTitle(title)[:20]+"_"+time.strftime("%Y_%m_%d_%H_%M", time.localtime())+".csv"
+        file = "VIDEO_"+str(BVID)+"_"+validateTitle(title)[:40]+"_"+time.strftime("%Y_%m_%d_%H_%M", time.localtime())+".csv"
         rowHead = ["评论ID", "父评论ID", "回复数", "点赞数", "会员ID", "会员名字", "评论"]
         appendCsv(file, rowHead)
         
